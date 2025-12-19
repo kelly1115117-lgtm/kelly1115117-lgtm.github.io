@@ -1,0 +1,125 @@
+body {
+    font-family: sans-serif;
+    color: #2d2d2d;
+    background-color: #f1f1f1;
+}
+
+.container{
+    width: 600px;
+    margin: 50px auto;
+}
+
+/* 頭貼 */
+.photo{
+    width: 160px;
+    height: 160px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.color-block {
+    width: 60px;          /* 長方形的寬度 */
+    height: 5px;          /* 長方形的高度（厚度） */
+    background-color: #ff9aa9; /* 這裡換成你喜歡的顏色代碼 */
+    margin: 20px auto;    /* 上下留 20px 間距，auto 負責讓它水平居中 */
+    border-radius: 2px;   /* 讓邊角稍微圓滑一點（可選） */
+}
+
+/* 標題 */
+.name h1{
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.info{
+    text-align: center;
+    margin-top: 10px;
+}
+.instagrm-btn{
+    display: inline-blocktex;
+    text-decoration: none;
+    background-color: #565656;   /* 按鈕填色 */
+    border: 1px solid #000000;
+    color: #ffffff;
+    padding: 8px 150px;
+    margin: 25px 0;
+    border-radius: 50px;
+}
+/* ===== 重點：Grid 作品牆 ===== */
+.works{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    grid-template-areas:
+        "w1 w3 w3"
+        "w2 w3 w3"
+        "w4 w5 w6";
+    gap: 10px;
+    margin-top: 50px;
+    aspect-ratio: 3/ 4;
+}
+
+/* 指定位置 */
+.works.work-item:nth-child(1){ grid-area: w1; }
+.works.work-item:nth-child(2){ grid-area: w2; }
+.work-item:nth-child(3){ grid-area: w3; }
+.works.work-item:nth-child(4){ grid-area: w4; }
+.works.work-item:nth-child(5){ grid-area: w5; }
+.works.work-item:nth-child(6){ grid-area: w6; }
+
+/* 每一格 */
+.work-item{
+    position: relative;
+    overflow: hidden;
+}
+
+/* 圖片撐滿格子 */
+.work-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.3s;
+}
+
+/* Hover 效果 */
+.work-item:hover img{
+    filter: blur(5px);
+}
+
+/* Overlay */
+.overlay{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.work-item:hover .overlay{
+    opacity: 1;
+}
+
+.works-normal {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 保持三欄 */
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* 確保第二組的圖片不會繼承 grid-area */
+.works-normal .work-item {
+    grid-area: auto; /* 重置區域設定 */
+    aspect-ratio: 2 / 3;
+}
