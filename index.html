@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>個人頁面</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 
 <body>
@@ -15,63 +16,123 @@
         <div class="color-block"></div>
 
         <div class="name">
-            <h1>史鎧瑄 KaiHsyuan</h1>
+            <h1>史鎧瑄 <span class="eng-name">KaiHsuan</span></h1>
+            <h2>Hi I'm <span class="input"></span></h2>
         </div>
 
         <div class="info">
             銘傳大學商設系學生，正在學習各種設計形式與視覺表現。
-            <br>作品範圍涵蓋平面設計、海報、封面以及簡單版面設計，期待自我成長。
-            <br><br><br><a href="https://www.instagram.com/skhsyuan/" class="instagrm-btn">instagram</a>
+            <br>作品範圍涵蓋平面設計、海報以及簡單版面設計，期待自我成長。
+
+            <div class="analytics">
+            <div class="data">
+                <i class="fa-solid fa-heart" style="color: #6f5b52;"></i>
+                <span class="number">300</span>
+            </div>
+              <div class="data">
+               <i class="fa-solid fa-user-group" style="color: #6f5b52;"></i>
+                <span class="number">200</span>
+            </div>
+              <div class="data">
+               <i class="fa-solid fa-share" style="color: #6f5b52;"></i> 
+                <span class="number">100</span>
+            </div>
         </div>
-       
-        <!-- 第一組：主視覺作品牆 -->
+            <br><br><a href="https://www.instagram.com/skhsyuan/" class="instagrm-btn">follow me</a>
+        </div>
+        
+
+        <div class="media-buttons">
+            <a href="https://www.facebook.com/officialENHYPEN?locale=zh_TW" style="background: #4267b2" class="link">
+                <i class="fa-brands fa-facebook-f"></i> 
+            </a>
+            <a href="https://www.instagram.com/enhypen/" style="background: #000000" class="link">
+                <i class="fa-brands fa-instagram"></i> 
+            </a>
+            <a href="https://open.spotify.com/playlist/5XVY2GinCELg0w9e0ng23s?si=c6f38a4ec9b74d09" style="background: #1db954" class="link">
+                <i class="fa-brands fa-spotify"></i>
+            </a>
+            <a href="https://youtu.be/saf4szIZc2I?si=a3UBVLCZDVptC1Eo" style="background: rgb(240, 0, 0)" class="link">
+                <i class="fa-brands fa-youtube"></i>
+            </a>    
+        </div>
+
+        
         <div class="works">
             <div class="work-item w1">
+                <a href="p1.jpg">
                 <img src="p1.jpg">
                 <div class="overlay">手帳封面</div>
+                </a>
             </div>
 
             <div class="work-item w2">
+                <a href="p2.png">
                 <img src="p2.png">
                 <div class="overlay">聖誕卡片</div>
+                </a>
             </div>
 
             <div class="work-item w3">
+                <a href="p3.jpg">
                 <img src="p3.jpg">
                 <div class="overlay">護手霜海報</div>
+                </a>
             </div>
 
             <div class="work-item w4">
+                <a href="p4.jpg">
                 <img src="p4.jpg ">
                 <div class="overlay">護手霜海報</div>
+                </a>
             </div>
 
             <div class="work-item w5">
+                <a href="p5.jpg">
                 <img src="p5.jpg">
                 <div class="overlay">專刊封面</div>
+                </a>
             </div>
 
             <div class="work-item w6">
+                <a href="p6.png">
                 <img src="p6.png">
                 <div class="overlay">金善禹</div>
+                </a>
             </div>
         </div>
 
         <div class="works-normal">
         <div class="work-item" >
+            <a href="p7.jpg">
             <img src="p7.jpg">
             <div class="overlay">其他作品</div>
+            </a>
         </div>
         <div class="work-item">
+            <a href="p8.jpg">
             <img src="p8.jpg">
             <div class="overlay">手帳本</div>
+            </a>
         </div>
         <div class="work-item">
+            <a href="p9.jpg">
             <img src="p9.jpg">
             <div class="overlay">音樂會海報</div>
+            </a>
         </div>
-        <!-- 可以繼續加更多作品 -->
     </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+<script>
+  var typed = new Typed(".input", {
+    strings: ["a student", "a designer?"],
+    typeSpeed: 70,
+    backSpeed: 55,
+    loop: true
+  });
+</script>
 </body>
 </html>

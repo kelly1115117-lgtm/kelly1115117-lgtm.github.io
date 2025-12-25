@@ -9,13 +9,36 @@ body {
     margin: 50px auto;
 }
 
+.container {
+    max-width: 650px;
+    width: 100%;
+
+    background: rgba(255, 255, 255, 0.65); /* 半透明白 */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); /* Safari */
+
+    border-radius: 24px;
+    padding: 50px;
+    
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(197, 197, 197, 0.4);}
+    
+
 /* 頭貼 */
 .photo{
-    width: 160px;
-    height: 160px;
+    width: 170px;
+    height: 170px;
     margin: 0 auto;
     border-radius: 50%;
     overflow: hidden;
+
+    transition: box-shadow 0.4s ease;
+    cursor: pointer;
+}
+.photo:hover{
+    box-shadow: 
+        0 0 20px rgba(75, 60, 60, 0.307),
+        0 0 30px rgba(76, 59, 59, 0.234);
 }
 
 .photo img{
@@ -23,10 +46,11 @@ body {
     height: 100%;
     object-fit: cover;
 }
+
 .color-block {
     width: 60px;          /* 長方形的寬度 */
     height: 5px;          /* 長方形的高度（厚度） */
-    background-color: #ff9aa9; /* 這裡換成你喜歡的顏色代碼 */
+    background-color: #6f5b52; /* 這裡換成你喜歡的顏色代碼 */
     margin: 20px auto;    /* 上下留 20px 間距，auto 負責讓它水平居中 */
     border-radius: 2px;   /* 讓邊角稍微圓滑一點（可選） */
 }
@@ -36,23 +60,105 @@ body {
     text-align: center;
     font-weight: 400;
     letter-spacing: 2px;
+    margin-bottom: 5px
+}
+.eng-name{
+    color: #434343;   
+    font-family: "Georgia", "Times New Roman", Times, serif;
+    font-style: light;
+    font-weight: 500; 
+    letter-spacing: 0.5px;
 }
 
 .info{
     text-align: center;
-    margin-top: 10px;
+    letter-spacing: 1px;
+    margin-top: 30px;
+
 }
+.name h2 {
+    text-align: center;
+    margin-top: 0;
+    font-size: 18px;
+    
+}
+.input{
+  align-items: center;
+  color: #6f5b52;
+  opacity: 1;
+  display: inline;
+  padding-right: 4px;
+}
+
 .instagrm-btn{
     display: inline-blocktex;
     text-decoration: none;
-    background-color: #565656;   /* 按鈕填色 */
-    border: 1px solid #000000;
+    background-color: #6f5b52;   /* 按鈕填色 */
+    border: 1px solid #6f5b52;
     color: #ffffff;
     padding: 8px 150px;
     margin: 25px 0;
     border-radius: 50px;
 }
-/* ===== 重點：Grid 作品牆 ===== */
+.instagrm-btn:hover{
+    transform: translateY(-1px);
+    background-color: #f1f1f1;
+    color: #2c2c2c;
+    box-shadow: 
+        0 6px 25px rgba(0, 0, 0, 0.12),
+        0 4px 8px rgba(0, 0, 0, 0.12);
+}
+.media-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+.media-buttons .link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 18px;
+    height: 38px;
+    width:  38px;
+    border-radius: 50%;
+    margin: 0 10px;
+    background-color: #565656;
+    text-decoration: none;
+
+}
+
+.media-buttons a:hover{
+    color: #ffffff;
+    transform: scale(1.2)translateY(-3px);
+    box-shadow: 
+        0 2px 10px rgba(110, 110, 110, 0.325),
+        0 2px 10px rgba(148, 148, 148, 0.334);
+}
+
+.analytics{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+.analytics .data{
+    display: flex;
+    align-items: center;
+    color: #333;
+    padding: 0 20px;
+    border-right: 2px solid #838383;
+
+}
+.data i{
+    font-size: 18px;
+    margin-right: 6px;
+
+}
+.data:last-child{
+    border-right: none;
+}
 .works{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -102,14 +208,21 @@ body {
     align-items: center;
     background: rgba(0,0,0,0.6);
     color: #fff;
+
+    font-size: 15px;
+    letter-spacing: 3px;
+    font-weight: 400;
+
     opacity: 0;
     transition: opacity 0.3s;
     pointer-events: none;
+    font-family: "Arial Narrow", "Arial Narrow Bold", sans-serif; 
 }
 
 .work-item:hover .overlay{
     opacity: 1;
 }
+
 
 .works-normal {
     display: grid;
